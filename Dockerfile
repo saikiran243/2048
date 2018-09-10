@@ -1,11 +1,9 @@
-FROM alpine:latest
+FROM httpd:2.4
 
 MAINTAINER saikiran.sd@gmail.com 
 
-RUN apk --update add nginx
-
-COPY . /usr/share/nginx/html
+COPY . /var/www/html
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["httpd-foreground"]
