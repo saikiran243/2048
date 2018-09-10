@@ -1,5 +1,11 @@
-FROM tomcat:7
-LABEL author="saikiran" Email="saikiran.sd@gmail.com"
-COPY . /usr/local/tomcat/webapps/2048
-EXPOSE 8080
-CMD ["bin/catalina.sh","run"]
+FROM alpine:latest
+
+MAINTAINER saikiran.sd@gmail.com 
+
+RUN apk --update add nginx
+
+COPY . /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
