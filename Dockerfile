@@ -1,6 +1,6 @@
 FROM httpd:2.4
 
-MAINTAINER saikiran.sd@gmail.com 
+MAINTAINER saikiran.sd@outlook.com 
 
 COPY . /var/www/html
 
