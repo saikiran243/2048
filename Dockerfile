@@ -1,9 +1,11 @@
-FROM httpd:2.4
+FROM alpine:latest
 
-LABEL  saikiran.sd@outlook.com 
+LABEL saikiran.sd@gmail.com
 
-COPY . /var/www/html
+RUN apk --update add nginx
+
+COPY 2048 /usr/share/nginx/html
 
 EXPOSE 80
 
-CMD ["httpd-foreground"]
+CMD ["nginx", "-g", "daemon off;"]
